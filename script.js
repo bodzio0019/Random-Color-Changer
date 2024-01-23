@@ -1,9 +1,18 @@
 const colors = ["rgb(255, 255, 255)", "rgb(0, 0, 255)", "rgb(0, 128, 0)", "rgb(255, 255, 0)", "rgb(255, 215, 0)", "rgb(128, 128, 128)"];
-const names = ["white", "blue", "green", "yellow", "gold", "grey"];
+const names = ["WHITE", "BLUE", "GREEN", "YELLOW", "GOLD", "GREY"];
 const hex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
 const but1 = document.querySelector(".button1");
 const but2 = document.querySelector(".button2");
 const body = document.body;
+
+function startColor () {
+    let num = Math.floor(Math.random() * colors.length);
+    let rand = colors[num];
+    document.body.style.backgroundColor = rand;
+    document.querySelector(".color").innerHTML = names[num];
+};
+
+startColor();
 
 function change() {
     let num = Math.floor(Math.random() * colors.length);
@@ -13,7 +22,7 @@ function change() {
         change();
     } else{
         document.body.style.backgroundColor = rand;
-        document.querySelector(".color").innerHTML = names[num].toUpperCase();
+        document.querySelector(".color").innerHTML = names[num];
     }
 };
 
