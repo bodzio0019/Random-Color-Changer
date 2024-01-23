@@ -9,10 +9,8 @@ function change() {
     let current = getComputedStyle(body).backgroundColor;
     if(rand === current) {
         change();
-        console.log("HI");
     } else{
-        console.log("NO", num);
-        let changed = document.body.style.backgroundColor = rand;
+        document.body.style.backgroundColor = rand;
         document.querySelector(".color").innerHTML = names[num].toUpperCase();
     }
 };
